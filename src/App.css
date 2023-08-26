@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  background-image: url('./images/background.png');
+  background-size: cover;
+  position: relative;
   min-height: 100vh;
+  min-width: 100vw;
+}
+
+.app {
+  background-image: url("./images/holograph3.webp");
+  background-size: 90%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'DotGothic16', sans-serif;
+  position: absolute;
 }
 
-.App-link {
-  color: #61dafb;
+
+.bubble-font{
+  font-family: 'Bagel Fat One', cursive;
+  color: #F1E0CE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title{
+  text-shadow: 5px 5px 1px rgb(132, 27, 132);
+}
+
+.number {
+  text-shadow: 5px 5px 1px rgb(30, 142, 30);
+}
+
+.date{
+  text-shadow: 5px 5px 1px rgb(204, 62, 11);
+
+}
+
+.invitation span{
+  font-family: 'DotGothic16', sans-serif;
+}
+
+.btn{
+  box-shadow: 5px 5px 1px rgb(169, 70, 103);
+}
+
+@-webkit-keyframes bounce {
+  0% { transform: translateY(-5px)  }
+  50% { transform: translateY(10px) }
+  100% { transform: translateY(-5px) }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-5px)  }
+  50% { transform: translateY(10px) }
+  100% { transform: translateY(-5px) }
+}
+
+.img{
+  -webkit-animation: bounce 3s infinite ease-in-out;
+    -o-animation: bounce 3s infinite ease-in-out;
+    -ms-animation: bounce 3s infinite ease-in-out; 
+    -moz-animation: bounce 3s infinite ease-in-out; 
+    animation: bounce 3s infinite ease-in-out;
 }
