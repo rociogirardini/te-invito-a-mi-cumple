@@ -4,23 +4,12 @@ body{
   position: relative;
   min-height: 100vh;
   min-width: 100vw;
-}
-
-.app {
-  background-image: url("./images/holograph3.webp");
-  background-size: 90%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  min-width: 100vw;
+  font-family: 'Sans Serif', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-  font-family: 'DotGothic16', sans-serif;
-  position: absolute;
 }
 
 
