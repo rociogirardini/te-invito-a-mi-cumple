@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/te-invito-a-mi-cumple/static/css/main.5c7ede21.css",
-    "main.js": "/te-invito-a-mi-cumple/static/js/main.0679d3c4.js",
+    "main.js": "/te-invito-a-mi-cumple/static/js/main.821571f3.js",
     "static/js/787.ac797925.chunk.js": "/te-invito-a-mi-cumple/static/js/787.ac797925.chunk.js",
     "static/media/background.png": "/te-invito-a-mi-cumple/static/media/background.413d6e9de1e43507127a.png",
     "static/media/imagen1.png": "/te-invito-a-mi-cumple/static/media/imagen1.afb40dde52d0c106942a.png",
+    "static/media/confirmacion.jpeg": "/te-invito-a-mi-cumple/static/media/confirmacion.ce6778708f2a666e57bd.jpeg",
     "static/media/spinner.png": "/te-invito-a-mi-cumple/static/media/spinner.932738921ba983a1e5f0.png",
     "index.html": "/te-invito-a-mi-cumple/index.html",
     "main.5c7ede21.css.map": "/te-invito-a-mi-cumple/static/css/main.5c7ede21.css.map",
-    "main.0679d3c4.js.map": "/te-invito-a-mi-cumple/static/js/main.0679d3c4.js.map",
+    "main.821571f3.js.map": "/te-invito-a-mi-cumple/static/js/main.821571f3.js.map",
     "787.ac797925.chunk.js.map": "/te-invito-a-mi-cumple/static/js/787.ac797925.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5c7ede21.css",
-    "static/js/main.0679d3c4.js"
+    "static/js/main.821571f3.js"
   ]
 }
