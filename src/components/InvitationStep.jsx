@@ -31,7 +31,7 @@ const InvitationStep = () => {
               <p>
                 {hasPartner ? "Los" : "Te"} espero, {name}!
               </p>
-              <p>Sacale captura de pantalla o recibilo por mail:</p>
+              <p>Te lo mando por mail:</p>
               <input
                 type="text"
                 value={emailTo}
