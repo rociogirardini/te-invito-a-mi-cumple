@@ -3,6 +3,7 @@ import { useInvitation } from '../context/InvitacionContext';
 import NameStep from './NameStep';
 import PartnerStep from './PartnerStep';
 import InvitationStep from './InvitationStep';
+import ConfirmationStep from './ConfirmationStep';
 
 const Invitacion = () => {
   const { step } = useInvitation();
@@ -10,7 +11,8 @@ const Invitacion = () => {
   const components = [
     <NameStep />,
     <PartnerStep />,
-    <InvitationStep />
+    <InvitationStep />,
+    <ConfirmationStep />
   ];
 
   return components[step];

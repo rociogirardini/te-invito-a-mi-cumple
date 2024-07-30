@@ -37,6 +37,7 @@ export const InvitacionProvider = ({ children }) => {
           setShowName(true);
           setEmailSent(true);
           setSpinner(false);
+          next();
           console.log(result.text);
         },
         (error) => {

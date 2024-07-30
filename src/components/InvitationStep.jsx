@@ -4,15 +4,9 @@ import { LoadingButton } from "./LoadingButton";
 
 const InvitationStep = () => {
   const {
-    name,
     hasPartner,
     spinner,
     sendEmailToMe,
-    emailSent,
-    emailTo,
-    setEmailTo,
-    sendDetailsEmail,
-    detailsSent,
   } = useInvitation();
 
   return (
@@ -25,34 +19,11 @@ const InvitationStep = () => {
         <p>Todavía no se qué hacer </p>
         <p className="text-4xl date bubble-font">Sabado 7 a las 13 hs</p>
         <p>LUGAR: MI CASA</p>
-        {emailSent ? (
-          !detailsSent ? (
-            <>
-              <p>
-                {hasPartner ? "Los" : "Te"} espero, {name}!
-              </p>
-              <p>Te lo mando por mail:</p>
-              <input
-                type="text"
-                value={emailTo}
-                onChange={(e) => setEmailTo(e.target.value)}
-                placeholder="Tu email"
-                className=" mt-2 bg-slate-200 rounded-full w-50 py-2 px-3 text-black focus:outline-fuchsia-800"
-              />
-              <LoadingButton
-                loading={spinner}
-                action={sendDetailsEmail}
-                label="Enviar"
-              />
-            </>
-          ) : ( <p>¡Gracias!</p>)
-        ) : (
-          <LoadingButton
-            loading={spinner}
-            action={sendEmailToMe}
-            label="Confirmar"
-          />
-        )}
+        <LoadingButton
+          loading={spinner}
+          action={sendEmailToMe}
+          label="Confirmar"
+        />
       </span>
     </div>
   );
