@@ -3,11 +3,7 @@ import { useInvitation } from "../context/InvitacionContext";
 import { LoadingButton } from "./LoadingButton";
 
 const InvitationStep = () => {
-  const {
-    hasPartner,
-    spinner,
-    sendEmailToMe,
-  } = useInvitation();
+  const { hasPartner, spinner, sendEmailToMe } = useInvitation();
 
   return (
     <div className="invitation grid grid-cols-1 gap-y-4 text-center px-2">
@@ -18,11 +14,19 @@ const InvitationStep = () => {
       <span className="tracking-widest grid justify-items-center grid-cols-1 gap-y-5">
         <p>Todavía no se qué hacer </p>
         <p className="text-4xl date bubble-font">Sabado 7 a las 13 hs</p>
-        <p>LUGAR: MI CASA</p>
+        <div>
+          <p className="mb-0">LUGAR: MI CASA</p>
+          <p className="mt-0">TRAER: SUSTANCIAS A CONSUMIR</p>
+        </div>
         <LoadingButton
           loading={spinner}
           action={sendEmailToMe}
           label="Confirmar"
+        />
+        <textarea
+          rows="5"
+          placeholder="Deje un mensajito... Por ejemplo, voy pero más tarde"
+          className=" mt-2 bg-slate-200 rounded-md w-50 py-2 px-3 text-black focus:outline-fuchsia-800"
         />
       </span>
     </div>

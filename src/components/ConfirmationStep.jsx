@@ -1,7 +1,7 @@
 import React from "react";
 import { useInvitation } from "../context/InvitacionContext";
 import { LoadingButton } from "./LoadingButton";
-import confirmacion from "../images/confirmacion.jpeg"
+import confirmacion from "../images/confirmacion.jpeg";
 
 const ConfirmationStep = () => {
   const {
@@ -15,13 +15,19 @@ const ConfirmationStep = () => {
   } = useInvitation();
   return (
     <div className="invitation grid grid-cols-1 gap-y-4 text-center px-2">
-      <img alt="grax" src={confirmacion} style={{ padding: "15px", maxHeight: '500px' }} />
+      <img
+        alt="grax"
+        src={confirmacion}
+        style={{ padding: "15px", maxHeight: "500px" }}
+      />
       {!detailsSent ? (
-         <span className="tracking-widest grid justify-items-center grid-cols-1 gap-y-5">
-          <p>
-            {hasPartner ? "Los" : "Te"} espero, {name} :)
-          </p>
-          <p>Te lo mando por mail:</p>
+        <span className="tracking-widest grid justify-items-center grid-cols-1 gap-y-5">
+          <div>
+            <p>
+              {hasPartner ? "Los" : "Te"} espero, {name} :)
+            </p>
+            <p>Te lo mando por mail:</p>
+          </div>
           <input
             type="text"
             value={emailTo}
@@ -36,7 +42,11 @@ const ConfirmationStep = () => {
           />
         </span>
       ) : (
-        <p>¡Gracias!</p>
+        <span>
+          <p>¡Gracias!</p>
+          <p>¡Gracias!</p>
+          <p>¡Gracias!</p>
+        </span>
       )}
     </div>
   );
