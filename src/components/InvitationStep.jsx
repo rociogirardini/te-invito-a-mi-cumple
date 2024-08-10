@@ -23,11 +23,6 @@ const InvitationStep = () => {
           action={sendEmailToMe}
           label="Confirmar"
         />
-        <textarea
-          rows="5"
-          placeholder="Deje un mensajito... Por ejemplo, voy pero más tarde"
-          className=" mt-2 bg-slate-200 rounded-md w-50 py-2 px-3 text-black focus:outline-fuchsia-800"
-        />
       </span>
     </div>
   );

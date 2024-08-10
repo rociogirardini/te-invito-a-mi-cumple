@@ -1,10 +1,18 @@
 import React from "react";
 import { useInvitation } from "../context/InvitacionContext";
 import paraa from "../images/para.jpg";
+import { LoadingButton } from "./LoadingButton";
 
 const PartnerStep = () => {
-  const { name, hasPartner, setHasPartner, quantity, setQuantity, next } =
-    useInvitation();
+  const {
+    name,
+    hasPartner,
+    setHasPartner,
+    quantity,
+    setQuantity,
+    viewInvitation,
+    spinner,
+  } = useInvitation();
 
   const getMessage = () => {
     switch (quantity) {
@@ -27,13 +35,17 @@ const PartnerStep = () => {
         <span style={{ textTransform: "capitalize" }}>{name}</span>, querés ir
         con alguien? 😏
       </p>
-      <p className="text-sm">(mejor dicho, tenés con quien ir?)</p>
+      <p className="text-sm">(tenés con quien ir?)</p>
       <label className="inline-flex items-center cursor-pointer mt-2">
         <input
           type="checkbox"
+          disabled={spinner}
           value={hasPartner}
           className="sr-only peer"
-          onClick={() => {setHasPartner(!hasPartner); setQuantity(0)}}
+          onClick={() => {
+            setHasPartner(!hasPartner);
+            setQuantity(0);
+          }}
         />
         <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-pink-300 dark:peer-focus:ring-pink-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-pink-600"></div>
         <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -110,13 +122,12 @@ const PartnerStep = () => {
           <span className="mt-2">{getMessage()} </span>
         </>
       )}
-      <button
+      <LoadingButton
+        loading={spinner}
+        label="Siguiente"
+        action={viewInvitation}
         disabled={hasPartner && quantity === 0}
-        onClick={next}
-        className="rounded-full mt-4 px-5 py-3 bg-rose-900 disabled:bg-zinc-500 disabled:text-zinc-300"
-      >
-        Siguiente
-      </button>
+      />
     </div>
   );
 };

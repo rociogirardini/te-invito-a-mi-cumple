@@ -12,7 +12,7 @@ const NameStep = () => {
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="Identifíquese"
+        placeholder="Tu nombre"
         className=" mt-2 bg-slate-200 rounded-full w-50 py-2 px-3 text-black focus:outline-fuchsia-800"
       />
       <button

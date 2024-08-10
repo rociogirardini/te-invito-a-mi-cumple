@@ -22,10 +22,37 @@ export const InvitacionProvider = ({ children }) => {
     setStep((prevStep) => prevStep + 1);
   };
 
+  const viewInvitation = () => {
+    setSpinner(true);
+
+    const params = {
+      subject: "Alguien hizo clic",
+      title: "Vi la invitación",
+      name: name,
+      quantity: 0,
+    };
+
+    emailjs
+      .send("service_6con24h", "template_8qb0c7r", params, "F4640DpjT_pQg77Km")
+      .then(
+        (result) => {
+          setSpinner(false);
+          next();
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+          setSpinner(false);
+        }
+      );
+  }
+
   const sendEmailToMe = () => {
     setSpinner(true);
 
     const params = {
+      subject: "Alguien confirmó!",
+      title: "Confirmé :)",
       name: name,
       quantity: quantity + 1,
     };
@@ -93,6 +120,7 @@ export const InvitacionProvider = ({ children }) => {
         detailsSent,
         setDetailsSent,
         sendDetailsEmail,
+        viewInvitation,
       }}
     >
       {children}
