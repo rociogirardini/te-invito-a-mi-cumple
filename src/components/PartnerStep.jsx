@@ -10,7 +10,7 @@ const PartnerStep = () => {
     setHasPartner,
     quantity,
     setQuantity,
-    viewInvitation,
+    next,
     spinner,
   } = useInvitation();
 
@@ -125,7 +125,7 @@ const PartnerStep = () => {
       <LoadingButton
         loading={spinner}
         label="Siguiente"
-        action={viewInvitation}
+        action={next}
         disabled={hasPartner && quantity === 0}
       />
     </div>

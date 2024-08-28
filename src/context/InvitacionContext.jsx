@@ -16,36 +16,11 @@ export const InvitacionProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
   const [spinner, setSpinner] = useState(false);
   const [step, setStep] = useState(0);
-  const [emailTo, setEmailTo] = useState("");
+  const [numberTo, setNumberTo] = useState("");
 
   const next = () => {
     setStep((prevStep) => prevStep + 1);
   };
-
-  const viewInvitation = () => {
-    setSpinner(true);
-
-    const params = {
-      subject: "Alguien hizo clic",
-      title: "Vi la invitación",
-      name: name,
-      quantity: 0,
-    };
-
-    emailjs
-      .send("service_6con24h", "template_8qb0c7r", params, "F4640DpjT_pQg77Km")
-      .then(
-        (result) => {
-          setSpinner(false);
-          next();
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-          setSpinner(false);
-        }
-      );
-  }
 
   const sendEmailToMe = () => {
     setSpinner(true);
@@ -74,27 +49,26 @@ export const InvitacionProvider = ({ children }) => {
       );
   };
 
-  const sendDetailsEmail = () => {
+  const sendDetailsEmail = async () => {
     setSpinner(true);
 
-    const params = {
-      name: name,
-      user_email: emailTo,
-    };
-
-    emailjs
-      .send("service_6con24h", "template_3qs0yk8", params, "F4640DpjT_pQg77Km")
-      .then(
-        (result) => {
-          setDetailsSent(true);
-          setSpinner(false);
-          console.log(result.text);
+    try {
+      const response = await fetch('https://chatbot-m3molnqw3-rogirardini-gmailcoms-projects.vercel.app/send-invitation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log(error.text);
-          setSpinner(false);
-        }
-      );
+        body: JSON.stringify({ WaId: `549${numberTo}` }),
+      });
+      
+      const data = await response.json();
+      console.log(data);
+      setDetailsSent(true);
+      setSpinner(false);
+    } catch (error) {
+      console.error('Error enviando la invitación:', error);
+      setSpinner(false);
+    }
   };
 
   return (
@@ -115,12 +89,11 @@ export const InvitacionProvider = ({ children }) => {
         next,
         sendEmailToMe,
         emailSent,
-        setEmailTo,
-        emailTo,
+        setNumberTo,
+        numberTo,
         detailsSent,
         setDetailsSent,
         sendDetailsEmail,
-        viewInvitation,
       }}
     >
       {children}

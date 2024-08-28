@@ -6,11 +6,10 @@ import tematica from "../images/tematica.jpeg";
 
 const ConfirmationStep = () => {
   const {
-    name,
     hasPartner,
     spinner,
-    emailTo,
-    setEmailTo,
+    numberTo,
+    setNumberTo,
     detailsSent,
     sendDetailsEmail,
   } = useInvitation();
@@ -26,17 +25,17 @@ const ConfirmationStep = () => {
           <span className="tracking-widest grid justify-items-center grid-cols-1 gap-y-5">
             <div>
               <p>{hasPartner ? "Los" : "Te"} espero :)</p>
-              <p>Si te vas a olvidar, te lo mando por mail:</p>
+              <p>Si te vas a olvidar, te llega por wpp:</p>
             </div>
             <input
               type="text"
-              value={emailTo}
-              onChange={(e) => setEmailTo(e.target.value)}
-              placeholder={`${name}@holis.com`}
+              value={numberTo}
+              onChange={(e) => setNumberTo(e.target.value)}
+              placeholder={`3547123456`}
               className=" bg-slate-200 rounded-full w-50 py-2 px-3 text-black focus:outline-fuchsia-800"
             />
             <LoadingButton
-              disabled={!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTo)}
+              disabled={numberTo === ''}
               loading={spinner}
               action={sendDetailsEmail}
               label="Enviar"
