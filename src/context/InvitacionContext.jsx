@@ -16,7 +16,7 @@ export const InvitacionProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
   const [spinner, setSpinner] = useState(false);
   const [step, setStep] = useState(0);
-  const [numberTo, setNumberTo] = useState("");
+  const [emailTo, setEmailTo] = useState("");
 
   const next = () => {
     setStep((prevStep) => prevStep + 1);
@@ -52,23 +52,24 @@ export const InvitacionProvider = ({ children }) => {
   const sendDetailsEmail = async () => {
     setSpinner(true);
 
-    try {
-      const response = await fetch('https://chatbot-m3molnqw3-rogirardini-gmailcoms-projects.vercel.app/send-invitation', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    const params = {
+      name: name,
+      user_email: emailTo,
+    };
+
+    emailjs
+      .send("service_6con24h", "template_3qs0yk8", params, "F4640DpjT_pQg77Km")
+      .then(
+        (result) => {
+          setDetailsSent(true);
+          setSpinner(false);
+          console.log(result.text);
         },
-        body: JSON.stringify({ WaId: `549${numberTo}` }),
-      });
-      
-      const data = await response.json();
-      console.log(data);
-      setDetailsSent(true);
-      setSpinner(false);
-    } catch (error) {
-      console.error('Error enviando la invitación:', error);
-      setSpinner(false);
-    }
+        (error) => {
+          console.log(error.text);
+          setSpinner(false);
+        }
+      );
   };
 
   return (
@@ -89,8 +90,8 @@ export const InvitacionProvider = ({ children }) => {
         next,
         sendEmailToMe,
         emailSent,
-        setNumberTo,
-        numberTo,
+        setEmailTo,
+        emailTo,
         detailsSent,
         setDetailsSent,
         sendDetailsEmail,
