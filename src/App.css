@@ -1,7 +1,5 @@
 body{
-  background-image: url('./images/background.png');
-  background-size: cover;
-  position: relative;
+  background: linear-gradient(to bottom, #8f1919, #d0aa11);
   min-height: 100vh;
   min-width: 100vw;
   font-family: 'Sans Serif', sans-serif;
@@ -9,17 +7,17 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 
-.bubble-font{
-  font-family: 'Bagel Fat One', cursive;
-  color: #F1E0CE;
+.roboto-font{
+  font-family: "Roboto", sans-serif;
+  color: #1C2226;
 }
 
 .title{
-  text-shadow: 5px 5px 1px rgb(132, 27, 132);
+  font-weight: 900;
 }
 
 .number {
@@ -32,7 +30,7 @@ body{
 }
 
 .invitation span{
-  font-family: "Kode Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn{

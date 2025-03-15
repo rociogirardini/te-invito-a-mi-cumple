@@ -14,14 +14,9 @@ const ConfirmationStep = () => {
     sendDetailsEmail,
   } = useInvitation();
   return (
-    <div className="invitation grid grid-cols-1 gap-y-4 text-center px-2">
+    <div className="invitation text-white grid grid-cols-1 gap-y-4 text-center px-2">
       {!detailsSent ? (
         <>
-          <img
-            alt="grax"
-            src={tematica}
-            style={{ padding: "15px", maxHeight: "500px" }}
-          />
           <span className="tracking-widest grid justify-items-center grid-cols-1 gap-y-5">
             <div>
               <p>{hasPartner ? "Los" : "Te"} espero :)</p>

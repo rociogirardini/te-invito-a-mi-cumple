@@ -33,7 +33,7 @@ export const InvitacionProvider = ({ children }) => {
     };
 
     emailjs
-      .send("service_6con24h", "template_8qb0c7r", params, "F4640DpjT_pQg77Km")
+      .send("service_cfg8u8c", "template_8qb0c7r", params, "F4640DpjT_pQg77Km")
       .then(
         (result) => {
           setShowName(true);
@@ -58,7 +58,7 @@ export const InvitacionProvider = ({ children }) => {
     };
 
     emailjs
-      .send("service_6con24h", "template_3qs0yk8", params, "F4640DpjT_pQg77Km")
+      .send("service_cfg8u8c", "template_3qs0yk8", params, "F4640DpjT_pQg77Km")
       .then(
         (result) => {
           setDetailsSent(true);
