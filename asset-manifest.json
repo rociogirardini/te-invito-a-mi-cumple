@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/te-invito-a-mi-cumple/static/css/main.f441c8e7.css",
-    "main.js": "/te-invito-a-mi-cumple/static/js/main.25208e71.js",
+    "main.css": "/te-invito-a-mi-cumple/static/css/main.3aaae5c6.css",
+    "main.js": "/te-invito-a-mi-cumple/static/js/main.f2c23789.js",
     "static/js/787.ac797925.chunk.js": "/te-invito-a-mi-cumple/static/js/787.ac797925.chunk.js",
-    "static/media/background.png": "/te-invito-a-mi-cumple/static/media/background.413d6e9de1e43507127a.png",
     "static/media/tematica.jpeg": "/te-invito-a-mi-cumple/static/media/tematica.d5add951fb66d0db6fad.jpeg",
-    "static/media/imagen1.png": "/te-invito-a-mi-cumple/static/media/imagen1.afb40dde52d0c106942a.png",
+    "static/media/imagen1_es.png": "/te-invito-a-mi-cumple/static/media/imagen1_es.1c18f244e57221430a66.png",
     "static/media/confirmacion.jpeg": "/te-invito-a-mi-cumple/static/media/confirmacion.ce6778708f2a666e57bd.jpeg",
     "static/media/para.jpg": "/te-invito-a-mi-cumple/static/media/para.e3888b9038c36388225a.jpg",
     "index.html": "/te-invito-a-mi-cumple/index.html",
-    "main.f441c8e7.css.map": "/te-invito-a-mi-cumple/static/css/main.f441c8e7.css.map",
-    "main.25208e71.js.map": "/te-invito-a-mi-cumple/static/js/main.25208e71.js.map",
+    "main.3aaae5c6.css.map": "/te-invito-a-mi-cumple/static/css/main.3aaae5c6.css.map",
+    "main.f2c23789.js.map": "/te-invito-a-mi-cumple/static/js/main.f2c23789.js.map",
     "787.ac797925.chunk.js.map": "/te-invito-a-mi-cumple/static/js/787.ac797925.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f441c8e7.css",
-    "static/js/main.25208e71.js"
+    "static/css/main.3aaae5c6.css",
+    "static/js/main.f2c23789.js"
   ]
 }
